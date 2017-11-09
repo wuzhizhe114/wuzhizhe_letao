@@ -1,4 +1,37 @@
 
+/*快速定位*/
+.pr{
+    position: relative;
+}
+.pa{
+    position: absolute;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+/*清除浮动*/
+.clearfix::after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+/* 设置body 宽高撑满整个屏幕*/
+html,
+body {
+    height: 100%;
+}
+
 /* 登陆页背景色*/
 .login_bg {
     background-color: #222d32;
@@ -6,4 +39,102 @@
 
 .mt{
     margin-top: 150px;
+}
+
+/* 首页*/
+
+/*首页侧边栏*/
+.lt_slide {
+    float: left;
+    width: 180px;
+    height: 100%;
+    background-color: #222d32;
+    color: #fff;
+    transition: all 0.5s;
+}
+.lt_slide.now {
+    margin-left: -180px;
+    /*width: 0px;*/
+}
+/* 顶部通栏*/
+.lt_slide .slide_top {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    background-color: #367fa9;
+    text-align: center;
+}
+
+.lt_slide .slide_top a {
+    color: #fff;
+}
+
+/* 用户信息*/
+.lt_slide .slide_user {
+    text-align: center;
+}
+.lt_slide .slide_user img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 8px auto;
+}
+
+/* 用户管理*/
+/* 分类管理*/
+/* 商品管理*/
+.lt_slide .slide_manage a {
+    padding-left: 40px;
+    line-height: 40px;
+    color: #aaa;
+    border: 3px solid transparent;
+}
+.lt_slide .slide_manage a.active{
+    border-left-color: #3c8dbc;
+    background-color: #1d1f21;
+    color: #fff;
+}
+.lt_slide .slide_manage a i {
+    margin-right: 6px;
+}
+
+/* 分类管理内容*/
+.lt_slide .category_content a {
+    line-height: 30px;
+    padding-left: 60px;
+    color: #aaa;
+}
+.lt_slide .category_content a.active{
+    color: #fff;
+}
+
+/* 右边主体内容*/
+.lt_main {
+    height: 100%;
+    overflow: hidden;
+    /*background-color: darkcyan;*/
+    /*transition: width 1s;*/
+}
+/* 顶部通栏*/
+.lt_main .main_topbar {
+    height: 50px;
+    background-color: #3c8dbc;
+    line-height: 50px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.lt_main .main_topbar a {
+    color: #fff;
+    font-size: 16px;
+    margin: 0px 15px;
+}
+
+/* 主体内容*/
+.lt_main .main_content {
+    overflow: hidden;
+}
+.lt_main .main_content>div {
+    width: 45%;
+    height: 500px;
 }

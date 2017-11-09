@@ -11,11 +11,12 @@ $(document).ajaxStart(function () {
 $(document).ajaxComplete(function () {
 
   // 设置延迟,模拟网络进度
-  setTimeout(function () {
+  //setTimeout(function () {
     NProgress.done();
-  },500);
+  //},500);
 });
 
+// 验证用户是否已登录
 if(location.href.indexOf('login.html') == -1){
   $.ajax({
     url:'/employee/checkRootLogin',
@@ -29,3 +30,31 @@ if(location.href.indexOf('login.html') == -1){
     }
   });
 }
+
+// 处理侧边栏 分类管理一二级菜单的显示隐藏
+$('.slide_manage.category').on('click',function () {
+  $('.category_content').slideToggle();
+});
+
+// 侧边栏的显示隐藏
+$('.main_topbar .pull-left').on('click',function () {
+  $('.lt_slide').toggleClass('now');
+});
+
+
+$('#logout').on('click',function (e) {
+  //console.log("1");
+  e.preventDefault();
+})
+//登出
+$('#btnVerify').on('click',function () {
+  $.ajax({
+    url:'/employee/employeeLogout',
+    success:function (data) {
+      //console.log(data);
+      if(data.success){
+        location.href = 'login.html';
+      }
+    }
+  });
+});
