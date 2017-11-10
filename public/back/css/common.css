@@ -149,4 +149,19 @@ table.table.table-bordered td {
     height: 500px;
 }
 
-/* 用户管理模块*/
+.mb_20 {
+    margin-bottom: 20px;
+}
+
+
+/* 二级分类,上传图片盒子*/
+.upload_box {
+    height: 34px;
+}
+
+#fileupload{
+    height: 34px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
