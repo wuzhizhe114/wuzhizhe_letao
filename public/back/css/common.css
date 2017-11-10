@@ -7,7 +7,7 @@
     position: absolute;
 }
 a {
-    display: block;
+    /*display: inline-block;*/
     text-decoration: none;
 }
 a:link,
@@ -41,6 +41,13 @@ body {
     margin-top: 150px;
 }
 
+/* 表格公共样式*/
+table.table.table-bordered td {
+    /*border-collapse: collapse;*/
+    text-align: center;
+    vertical-align: middle;
+}
+
 /* 首页*/
 
 /*首页侧边栏*/
@@ -55,6 +62,9 @@ body {
 .lt_slide.now {
     margin-left: -180px;
     /*width: 0px;*/
+}
+.lt_slide a {
+    display: block;
 }
 /* 顶部通栏*/
 .lt_slide .slide_top {
@@ -122,7 +132,7 @@ body {
     background-color: #3c8dbc;
     line-height: 50px;
     margin-bottom: 20px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .lt_main .main_topbar a {
     color: #fff;
@@ -134,7 +144,9 @@ body {
 .lt_main .main_content {
     overflow: hidden;
 }
-.lt_main .main_content>div {
+.lt_main .main_content>div.chart {
     width: 45%;
     height: 500px;
 }
+
+/* 用户管理模块*/

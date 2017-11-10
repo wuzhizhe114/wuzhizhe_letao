@@ -41,11 +41,11 @@ $('.main_topbar .pull-left').on('click',function () {
   $('.lt_slide').toggleClass('now');
 });
 
-
-$('#logout').on('click',function (e) {
-  //console.log("1");
-  e.preventDefault();
-})
+//登出按钮 阻止默认事件跳转
+//$('#logout').on('click',function (e) {
+//  //console.log("1");
+//  //e.preventDefault();
+//})
 //登出
 $('#btnVerify').on('click',function () {
   $.ajax({
