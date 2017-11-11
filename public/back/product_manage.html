@@ -53,7 +53,7 @@
             <li class="active">商品管理</li>
         </ol>
         <div class="main_content">
-            <button class="addCategory mb_20">添加商品</button>
+            <button class="addProduct mb_20">添加商品</button>
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -99,8 +99,8 @@
 </div>
 
 <!-- 添加商品模态框-->
-<div class="modal fade" id="addcategoryModal" tabindex="-1">
-    <div class="modal-dialog modal-sm">
+<div class="modal fade" id="addproductModal" tabindex="-1">
+    <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -109,30 +109,54 @@
             </div>
             <div class="modal-body text-danger">
                 <form id="form">
+                    <!-- 二级菜单-->
                     <div class="form-group">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <span class="category_first">请选择一级分类</span>
+                                <span class="category_second">请选择二级分类</span>
                                 <span class="caret"></span>
-                                <input type="hidden" name="categoryId" id="categoryId"/>
+                                <input type="hidden" name="brandId" id="brandId"/>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <!-- 挖坑-->
                             </ul>
                         </div>
                     </div>
+                    <!-- 名称-->
                     <div class="form-group">
-                        <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类名称"/>
+                        <input type="text" class="form-control" name="proName" placeholder="请输入商品名称"/>
                     </div>
+                    <!-- 描述-->
+                    <div class="form-group">
+                        <textarea class="form-control" name="proDesc" placeholder="请输入商品描述" rows="3"></textarea>
+                    </div>
+                    <!-- 库存-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="num" placeholder="请输入商品库存"/>
+                    </div>
+                    <!-- 价格-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="price" placeholder="请输入商品价格"/>
+                    </div>
+                    <!-- 原价-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="oldPrice" placeholder="请输入商品原价"/>
+                    </div>
+                    <!-- 尺码-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="size" placeholder="请输入商品尺码"/>
+                    </div>
+                    <!-- 图片上传-->
                     <div class="form-group">
                         <div class="upload_box pr">
                             <a href="javascript:;" class="btn btn-default">上传图片</a>
-                            <input id="fileupload" class="pa" type="file" name="pic1" data-url="/category/addSecondCategoryPic" multiple>
+                            <input id="fileupload" class="pa" type="file" name="pic1" data-url="/product/addProductPic" multiple>
                         </div>
                     </div>
-                    <div class="form-group box_img">
-                        <img src="images/none.png" width="80" alt=""/>
-                        <input type="hidden" name="brandLogo" id="brandLogo"/>
+                    <!-- 图片预览-->
+                    <div class="form-group img_box">
+                        <!--<img src="images/none.png" width="80" alt=""/>-->
+                        <input type="hidden" name="productLogo" id="productLogo"/>
                     </div>
                 </form>
             </div>
@@ -175,10 +199,20 @@
             <td>{{v.size}}</td>
             <td>{{v.statu===1?'已上架':'下架'}}</td>
             <td>
-                <button class="btn btn-danger btn-sm">下架</button>
-                <button class="btn btn-primary btn-sm">编辑</button>
+                {{if v.statu===1}}
+                    <button class="btn btn-danger btn-sm">下架</button>
+                {{else}}
+                    <button class="btn btn-primary btn-sm">编辑</button>
+                {{/if}}
             </td>
         </tr>
+    {{/each}}
+</script>
+
+<!--定义 模态框下拉菜单模板-->
+<script type="text/html" id="dropDownTemp">
+    {{each rows v i}}
+        <li><a href="#" data-id="{{v.id}}">{{v.brandName}}</a></li>
     {{/each}}
 </script>
 </body>

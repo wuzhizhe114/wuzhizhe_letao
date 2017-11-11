@@ -15,6 +15,7 @@ a:visited,
 a:hover,
 a:active {
     text-decoration: none;
+    outline: none;
 }
 
 /*清除浮动*/
@@ -135,13 +136,13 @@ table.table.table-bordered td {
     height: 50px;
     background-color: #3c8dbc;
     line-height: 50px;
-    padding-right: 190px;
+    padding-right: 180px;
     width: 100%;
     position: fixed;
     transition: all 0.5s;
 }
 .main_topbar.now {
-    padding-right: 0;
+    padding-right: 0px;
 }
 .lt_main .container-fluid {
     padding-top: 70px;
@@ -176,4 +177,9 @@ table.table.table-bordered td {
     top: 0;
     left: 0;
     opacity: 0;
+}
+
+/*预览图片盒子*/
+.img_box img {
+    margin-right: 10px;
 }
