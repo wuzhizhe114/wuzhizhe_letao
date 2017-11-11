@@ -39,6 +39,8 @@ $('.slide_manage.category').on('click',function () {
 // 侧边栏的显示隐藏
 $('.main_topbar .pull-left').on('click',function () {
   $('.lt_slide').toggleClass('now');
+  $('.lt_main').toggleClass('now');
+  $('.main_topbar').toggleClass('now');
 });
 
 //登出按钮 阻止默认事件跳转

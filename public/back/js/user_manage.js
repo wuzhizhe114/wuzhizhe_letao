@@ -5,7 +5,7 @@
 $(function () {
   // 定义页码和每页的数量
   var pageCurrent = 1;
-  var pageSize = 5;
+  var pageSize = 10;
   // 渲染数据
   render();
 
