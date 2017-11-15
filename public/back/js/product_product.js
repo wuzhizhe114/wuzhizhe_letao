@@ -7,6 +7,9 @@ $(function () {
   var pageCurrent = 1;
   var pageSize = 5;
 
+  //定义图片数组名称下标
+  var picIndex = 1;
+
   //模态框表单
   var $form = $('#form');
 
@@ -170,11 +173,17 @@ $(function () {
       $('.img_box').append('<img src="'+data.result.picAddr+'" width="80" alt=""/>');
 
       //将地址和图片名字保存到数组中
-      picArr.push(data.result.picName+'='+data.result.picAddr);
+      //var picIndex =1;
+      picArr.push('&picName'+picIndex+'='+data.result.picName+'&picAddr'+picIndex+'='+data.result.picAddr);
+      console.log(picArr);
+      picIndex++;
       if(picArr.length==3){
         //达到三张,将数组中的元素拼凑成字符串,赋值给productLogo的隐藏域
         $('#productLogo').val(picArr.join('&'));
 
+        console.log(picArr);
+        picArr = [];
+        picIndex = 1;
         console.log($form.serialize());
         //让productLogo校验成功
         $form.data("bootstrapValidator").updateStatus("productLogo", "VALID");

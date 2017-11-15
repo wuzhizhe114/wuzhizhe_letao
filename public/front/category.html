@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>乐淘移动端 - 分类页</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+  <!-- 引入mui框架-->
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css"/>
+  <!-- 引入font-awesome字体图标-->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css"/>
+  <!-- 引入公共样式-->
+  <link rel="stylesheet" href="css/common.css"/>
+  <!-- 分类与样式-->
+  <link rel="stylesheet" href="css/category.css"/>
+</head>
+<body>
+<div class="lt_container pr">
+  <div class="lt_header pa">
+    <a href="javascript:history.back();" class="icon_left pa"><span class="mui-icon mui-icon-back"></span></a>
+    <h4>乐淘分类</h4>
+    <a href="search.html" class="icon_right pa"><span class="fa fa-search"></span></a>
+  </div>
+  <div class="lt_content pr mui-clearfix">
+    <!-- 左边-->
+    <div class="lt_left mui-pull-left pr">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!-- 滚动内容-->
+          <ul class="first_category">
+            <!-- 挖坑 一级分类-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 右边-->
+    <div class="lt_right pr">
+      <div class="mui-scroll-wrapper">
+        <ul class="mui-scroll mui-clearfix">
+          <!-- 滚动内容-->
+          <!-- 挖坑 二级分类-->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="lt_footer pa">
+    <ul class="mui-clearfix">
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+
+          <p>首页</p>
+        </a>
+      </li>
+      <li class="now">
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- 引入mui js文件-->
+<script src="lib/mui/js/mui.min.js"></script>
+<!--zepto插件-->
+<script src="lib/zepto/zepto.min.js"></script>
+<!--模板插件-->
+<script src="lib/artTemplate/template-web.js"></script>
+<!--引入公共 js 文件-->
+<script src="js/common.js"></script>
+<!--定义一级分类模板-->
+<script type="text/html" id="firstCategoryTemp">
+  {{each rows v i}}
+  <li class="{{i==0?'now':''}}" data-id="{{v.id}}"><a href="javascript:;">{{v.categoryName}}</a></li>
+  {{/each}}
+</script>
+<!--定义二级分类模板-->
+<script type="text/html" id="secendCategoryTemp">
+  {{if rows.length ==0}}
+  <p>暂无此分类信息</p>
+  {{/if}}
+  {{each rows v i}}
+  <li>
+    <a href="javascript:;">
+      <img src="{{v.brandLogo}}" alt=""/>
+      <p>{{v.brandName}}</p>
+    </a>
+  </li>
+  {{/each}}
+</script>
+<!--分类页 js-->
+<script src="js/category.js"></script>
+</body>
+</html>

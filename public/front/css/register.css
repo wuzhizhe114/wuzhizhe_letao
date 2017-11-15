@@ -1,0 +1,25 @@
+
+form {
+  padding: 10px;
+}
+
+form .vCode {
+  width: 60%;
+}
+
+form button.btn_vCode {
+  width: 35% !important;
+  height: 40px;
+}
+form button.btn_vCode.now {
+  background-color: #666;
+  border: 1px solid #666;
+}
+
+form .btn_register {
+  width: 100% !important;
+}
+
+.register_text {
+  font-size: 12px;
+}

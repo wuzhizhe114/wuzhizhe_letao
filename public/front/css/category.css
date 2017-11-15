@@ -1,0 +1,48 @@
+/*左边*/
+.lt_left {
+  width: 90px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.first_category li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #f3f4f5;
+  border-bottom: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+}
+.first_category li.now {
+  box-sizing: content-box;
+  width: 91px;
+  border-right: none;
+  background-color: #fff;
+}
+.first_category li:last-of-type {
+  border-bottom: none;
+}
+.first_category li a {
+  display: block;
+  color: #333333;
+}
+
+/*右边*/
+.lt_right {
+  overflow: hidden;
+  height: 100%;
+  background-color: #ffffff;
+}
+.lt_right .mui-scroll {
+  padding: 10px;
+}
+.lt_right li {
+  float: left;
+  padding: 0px 6px;
+  text-align: center;
+}
+
+.lt_right li img {
+  width: 62px;
+  height: 62px;
+}

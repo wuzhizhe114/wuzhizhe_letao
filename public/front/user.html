@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>乐淘移动端 - 会员中心页</title>
+  <link rel="icon" href="favicon.ico"/>
+  <!-- 引入mui框架-->
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css"/>
+  <!-- 引入font-awesome字体图标-->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css"/>
+  <!-- 引入公共样式-->
+  <link rel="stylesheet" href="css/common.css"/>
+  <!-- 会员中心页样式-->
+  <link rel="stylesheet" href="css/user.css"/>
+</head>
+<body>
+<div class="lt_container pr">
+  <div class="lt_header pa">
+    <a href="javascript:history.back();" class="icon_left pa"><span class="mui-icon mui-icon-back"></span></a>
+    <h4>会员中心</h4>
+    <a href="javascript:;" class="icon_right pa"><span class=""></span></a>
+  </div>
+  <div class="lt_content pr">
+    <ul class="mui-table-view">
+      <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;" class="mui-navigate-right user_info">
+          <img class="mui-media-object mui-pull-left" src="images/user.jpg">
+          <!-- 挖坑-->
+        </a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">账号与安全</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a href="cart.html" class="mui-navigate-right">我的购物车</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">收货地址管理</a>
+      </li>
+    </ul>
+    <a href="javascript:;" class="mui-btn mui-block btn_logout">退出</a>
+  </div>
+  <div class="lt_footer pa">
+    <ul class="mui-clearfix">
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+
+          <p>购物车</p>
+        </a>
+      </li>
+      <li class="now">
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- 引入mui js文件-->
+<script src="lib/mui/js/mui.min.js"></script>
+<!--zepto插件-->
+<script src="lib/zepto/zepto.min.js"></script>
+<!--模板插件-->
+<script src="lib/artTemplate/template-web.js"></script>
+<!--引入公共 js 文件-->
+<script src="js/common.js"></script>
+<!--定义用户信息模板-->
+<script type="text/html" id="userInfoTemp">
+  <div class="mui-media-body">
+    {{username}}
+    <p class='mui-ellipsis'>{{mobile}}</p>
+  </div>
+</script>
+
+<!--会员中心页 js-->
+<script src="js/user.js"></script>
+</body>
+</html>

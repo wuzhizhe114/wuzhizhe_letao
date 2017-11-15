@@ -1,0 +1,40 @@
+/**
+ * Created by Administrator on 2017/11/13.
+ */
+
+/*搜索内容*/
+.lt_search-content {
+    padding: 0px 10px;
+}
+.lt_search-content .title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #666666;
+}
+.lt_search-content .title .btn_empty {
+    /*height: 30px;*/
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.lt_search-content .content {
+    margin-top: 10px;
+    border: 1px dashed #aaaaaa;
+    border-bottom-color: transparent;
+    /*padding-left: 10px;*/
+}
+
+.lt_search-content .content li {
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dashed #aaaaaa;
+    font-size: 12px;
+}
+
+.lt_search-content .content li span{
+    line-height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}

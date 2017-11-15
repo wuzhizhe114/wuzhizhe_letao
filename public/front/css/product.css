@@ -1,0 +1,62 @@
+
+.lt_container .lt_footer {
+  border-top: 1px solid #CCCCCC;
+  background-color: #eeeeee;
+}
+
+.lt_container .lt_header .icon_right.now {
+  transform: rotate(360deg);
+  transition: all 0.8s;
+}
+.list_item {
+  padding: 10px;
+  border-top: 1px solid #CCCCCC;
+}
+.list_item .price {
+  margin-left: 5px;
+  color: #f00;
+}
+.list_item .oldPrice {
+  color: #666666;
+  font-size: 12px;
+}
+.list_item .size::before,
+.list_item .desc::before{
+  content: "尺码:";
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 17px;
+}
+.list_item .desc::before {
+  content: "详情:";
+  margin-right: 5px;
+}
+.list_item .size span {
+  float: left;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 5px;
+  border-radius: 3px;
+  border: 1px solid #CCCCCC;
+  color: #666;
+}
+.list_item .size span.now {
+  background-color: #069;
+  color: #ffffff;
+}
+.list_item .desc span {
+  line-height: 30px;
+  font-size: 14px;
+}
+.tips {
+  font-size: 12px;
+  color: #666666;
+}
+
+.lt_footer {
+  padding: 10px;
+}
