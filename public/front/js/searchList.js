@@ -37,7 +37,7 @@ $(function () {
         url:'/product/queryProduct',
         data:obj,
         success:function (data) {
-          //console.log(data);
+          console.log(data);
           $('.lt_product').html(template('productTemp',data));
         }
       });

@@ -52,16 +52,22 @@
 <script type="text/html" id="productTemp">
   <div class="mui-slider">
     <div class="mui-slider-group mui-slider-loop">
-      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[pic.length-1].picAddr}}" /></a></div>
-      {{each pic v i}}
-        <div class="mui-slider-item"><a href="#"><img src="{{v.picAddr}}" /></a></div>
-      {{/each}}
-      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[0].picAddr}}" /></a></div>
+      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic.length>0?pic[pic.length-1].picAddr:'images/none.jpg'}}" /></a></div>
+      {{if pic.length == 0}}
+        <div class="mui-slider-item"><a href="#"><img src="images/none.jpg" /></a></div>
+      {{else}}
+        {{each pic v i}}
+          <div class="mui-slider-item"><a href="#"><img src="{{v.picAddr}}" /></a></div>
+        {{/each}}
+      {{/if}}
+      <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic.length>0?pic[0].picAddr:'images/none.jpg'}}" /></a></div>
     </div>
     <div class="mui-slider-indicator">
-      {{each pic v i}}
-        <div class="mui-indicator {{i===0?'mui-active':''}}"></div>
-      {{/each}}
+      {{if pic.length > 0}}
+        {{each pic v i}}
+          <div class="mui-indicator {{i===0?'mui-active':''}}"></div>
+        {{/each}}
+      {{/if}}
     </div>
   </div>
   <div class="list_item">

@@ -20,7 +20,7 @@
 <div class="lt_container pr">
     <div class="lt_header pa">
         <a href="javascript:history.back();" class="icon_left pa"><span class="mui-icon mui-icon-back"></span></a>
-        <h4>搜索中心</h4>
+        <h4>商品列表</h4>
         <a href="javascript:;" class="icon_right pa"><span class=""></span></a>
     </div>
     <div class="lt_content pr">
@@ -102,7 +102,7 @@
     {{else}}
         {{each data v i}}
             <a href="product.html?productId={{v.id}}" class="item">
-                <img src="{{v.pic[0].picAddr}}" alt="">
+                <img src="{{v.pic.length>0?v.pic[0].picAddr:'images/none.png'}}" alt="">
                 <p class="mui-ellipsis-2">{{v.proName}}</p>
                 <p>
                     <span class="price">&yen;{{v.price}}</span>

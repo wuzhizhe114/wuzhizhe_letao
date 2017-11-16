@@ -8,13 +8,13 @@ $(function () {
   var pageSize = 5;
 
   //定义图片数组名称下标
-  var picIndex = 1;
+  //var picIndex = 1;
 
   //模态框表单
   var $form = $('#form');
 
   // 定义一个数组变量,保存图片地址
-  var picArr = [];
+  //var picArr = [];
 
   // 渲染数据
   render();
@@ -165,26 +165,28 @@ $(function () {
     //data：图片上传后的对象，通过e.result.picAddr可以获取上传后的图片地址
     done:function (e, data) {
       //判断是否超过三张图片
-      if(picArr.length >=3){
+      if($('.img_box img').length >=3){
         return false;
       }
       //console.log(data.result.picAddr);
       //图片预览
-      $('.img_box').append('<img src="'+data.result.picAddr+'" width="80" alt=""/>');
+      $('.img_box').append('<img data-name="'+data.result.picName+'" data-src="'+data.result.picAddr+'" src="'+data.result.picAddr+'" width="80" alt=""/>');
 
       //将地址和图片名字保存到数组中
       //var picIndex =1;
-      picArr.push('&picName'+picIndex+'='+data.result.picName+'&picAddr'+picIndex+'='+data.result.picAddr);
-      console.log(picArr);
-      picIndex++;
-      if(picArr.length==3){
+      //var picname = '&picName'+picIndex+'='+data.result.picName;
+      //var picaddr = '&picAddr'+picIndex+'='+data.result.picAddr;
+      //picArr.push(picname+picaddr);
+      //console.log(picname);
+      //console.log(picaddr);
+      //console.log(picArr);
+      //picIndex++;
+      if($('.img_box img').length==3){
         //达到三张,将数组中的元素拼凑成字符串,赋值给productLogo的隐藏域
-        $('#productLogo').val(picArr.join('&'));
+        //$('#productLogo').val(picArr.join('&'));
 
-        console.log(picArr);
-        picArr = [];
-        picIndex = 1;
-        console.log($form.serialize());
+        //console.log(picArr);
+        //console.log($form.serialize());
         //让productLogo校验成功
         $form.data("bootstrapValidator").updateStatus("productLogo", "VALID");
       } else {
@@ -198,10 +200,22 @@ $(function () {
   $form.on('success.form.bv', function (e) {
 
     e.preventDefault();
+    console.log($form.serialize());
+    var data = $form.serialize();
+
+    //获取到img_box下所有的图片，获取picName和picAddr，拼接到data中
+    var $img = $(".img_box img");
+
+
+    //图片的src在获取的时候，会自动拼接上绝对路径地址： http://localhost,不希望，也放到自定义的属性中。
+    data += "&picName1=" + $img[0].dataset.name + "&picAddr1=" + $img[0].dataset.src;
+    data += "&picName2=" + $img[1].dataset.name + "&picAddr2=" + $img[1].dataset.src;
+    data += "&picName3=" + $img[2].dataset.name + "&picAddr3=" + $img[2].dataset.src;
+    console.log(data);
     $.ajax({
       url: '/product/addProduct',
       type: 'post',
-      data: $form.serialize(),
+      data: data,
       success: function (data) {
         //console.log(data);
         if (data.success) {
@@ -219,7 +233,10 @@ $(function () {
           $('#brandId').val('');
           // 重置图片路径隐藏域
           $('#productLogo').val('');
-
+          //重置 保存图片路径的数组
+          //picArr = [];
+          //picIndex = 1;
+          //console.log(picArr);
 
           //返回最新页
           pageCurrent = 1;
