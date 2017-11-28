@@ -40,12 +40,14 @@ $(function () {
   $('.mui-table-view').on('tap', '.btn_delete', function () {
     //console.log(1);
     var id = $(this).data('id');
+	var arr = [];
+	arr.push(id);
     mui.confirm('您确定要删除这件商品吗?', '温馨提示', ['否', '是'], function (e) {
       if (e.index === 1) {
         $.ajax({
           url: '/cart/deleteCart',
           data: {
-            id: id
+            id: arr
           },
           success: function (data) {
             console.log(data);
